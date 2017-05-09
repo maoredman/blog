@@ -1,2 +1,2 @@
 # Message board
-to run, enter `npm build`, then `node index` in command line
+To run, enter `npm build`, then `node index` in command line
