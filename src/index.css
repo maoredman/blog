@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.timestamp {
+  float: right;
+  margin-right: 100px;
+}
+
+.material-icons {
+  font-size: 40px;
+}
+
+.comment-button {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.comment-body {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  min-height: 30px;
+  max-height: 150px;
+  width: 90%;
+  overflow-wrap: break-word;
+  overflow-x: scroll;
+}
+
+.bold {
+  font-weight: 900;
+}
