@@ -13,19 +13,46 @@ body {
   font-size: 40px;
 }
 
+.my-big-icon {
+  line-height: 42px;
+  text-align: center;
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  overflow: hidden;
+  left: 15px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.small-title {
+  font-size: 12px;
+}
+
+.reply-button {
+  margin-top: 20px;
+}
+
+.hide {
+  display: none;
+}
+
 .comment-button {
   cursor: pointer;
   cursor: hand;
 }
 
 .comment-body {
-  margin-top: 10px;
-  margin-bottom: 20px;
   min-height: 30px;
   max-height: 150px;
   width: 90%;
   overflow-wrap: break-word;
   overflow-x: scroll;
+  line-height: 1.2em;
+}
+
+.smaller-comment-body {
+  font-size: 20px;
 }
 
 .bold {

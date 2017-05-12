@@ -15,6 +15,13 @@ class App extends Component {
       inputName: '',
     };
 
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleNameChange = this.handleNameChange.bind(this);
+    this.handleCommentChange = this.handleCommentChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  componentDidMount() {
     fetch('/api/comments') // or whatever URL you want
       .then((response) => { const result = response.json(); console.log('response.json: ' + result); return result; })
       .catch((error) => console.log('1st error: ' + error))
@@ -32,11 +39,6 @@ class App extends Component {
         this.setState({ ids: newids, names: newnames, comments: newcomments, times: newtimes });
       })
       .catch((error) => console.log('2nd error: ' + error));
-
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleNameChange = this.handleNameChange.bind(this);
-    this.handleCommentChange = this.handleCommentChange.bind(this);
-    this.handleClick = this.handleClick.bind(this);
   }
 
   handleNameChange(event) {
@@ -61,13 +63,7 @@ class App extends Component {
         comment: this.state.inputComment,
         name: this.state.inputName,
       })
-    }).then(function(res) {
-        if (res.ok) {
-          console.log('post ok')
-        } 
-      }, function(e) {
-        alert("Error: " + e);
-    });
+    })
   }
 
   handleClick(accessKey) {
@@ -86,10 +82,10 @@ class App extends Component {
         <form className="col s12" onSubmit={this.handleSubmit}>
           <div className="row">
             <div className="input-field col s3">
-              <input className="validate" type="text" onChange={this.handleNameChange} id="input_name" placeholder="Name..." />
+              <input className="validate" type="text" onChange={this.handleNameChange} id="input_name" placeholder="Name..." required/>
             </div>
             <div className="input-field col s6">
-              <input type="text" onChange={this.handleCommentChange} id="input_comment" placeholder="Comment..." />
+              <input type="text" onChange={this.handleCommentChange} id="input_comment" placeholder="Comment..." required/>
             </div>
             <div className="col s3">
               <button className="btn waves-effect waves-light" type="submit">
