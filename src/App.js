@@ -49,7 +49,8 @@ class App extends Component {
     this.setState({ inputComment: event.target.value });
   }
 
-  handleSubmit() {
+  handleSubmit(event) {
+    event.preventDefault(); // prevents reloading
     console.log(JSON.stringify({
         comment: this.state.inputComment,
         name: this.state.inputName,
@@ -64,6 +65,22 @@ class App extends Component {
         name: this.state.inputName,
       })
     })
+    let newids = this.state.ids;
+    newids.push(this.state.ids.length);
+    let newnames = this.state.names;
+    newnames.push(this.state.inputName);
+    let newcomments = this.state.comments;
+    newcomments.push(this.state.inputComment);
+    let newtimes = this.state.times;
+    newtimes.push(Date());
+    this.setState({
+      ids: newids,
+      names: newnames,
+      comments: newcomments,
+      times: newtimes,
+      inputComment: '',
+      inputName: ''
+    });
   }
 
   handleClick(accessKey) {
@@ -82,10 +99,10 @@ class App extends Component {
         <form className="col s12" onSubmit={this.handleSubmit}>
           <div className="row">
             <div className="input-field col s3">
-              <input className="validate" type="text" onChange={this.handleNameChange} id="input_name" placeholder="Name..." required/>
+              <input className="validate" type="text" onChange={this.handleNameChange} id="input_name" placeholder="Name..." value={this.state.inputName} required/>
             </div>
             <div className="input-field col s6">
-              <input type="text" onChange={this.handleCommentChange} id="input_comment" placeholder="Comment..." required/>
+              <input type="text" onChange={this.handleCommentChange} id="input_comment" placeholder="Comment..." value={this.state.inputComment} required/>
             </div>
             <div className="col s3">
               <button className="btn waves-effect waves-light" type="submit">

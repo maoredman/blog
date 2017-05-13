@@ -51,7 +51,8 @@ class Comment extends Component {
     this.setState({ inputReply: event.target.value });
   }
 
-  handleSubmit() {
+  handleSubmit(event) {
+    event.preventDefault();
     console.log(JSON.stringify({
         reply: this.state.inputReply,
         name: this.state.inputName,
@@ -66,6 +67,22 @@ class Comment extends Component {
         name: this.state.inputName,
       })
     })
+    let newids = this.state.ids;
+    newids.push(this.state.ids.length);
+    let newnames = this.state.names;
+    newnames.push(this.state.inputName);
+    let newreplies = this.state.replies;
+    newreplies.push(this.state.inputReply);
+    let newtimes = this.state.times;
+    newtimes.push(Date());
+    this.setState({
+      ids: newids,
+      names: newnames,
+      replies: newreplies,
+      times: newtimes,
+      inputReply: '',
+      inputName: ''
+    });
   }
 
   render() {
@@ -94,10 +111,10 @@ class Comment extends Component {
           <form className="col s10" onSubmit={this.handleSubmit}>
             <div className="row">
               <div className="input-field col s2">
-                <input className="validate" type="text" onChange={this.handleNameChange} id="input_name" placeholder="Name..." required/>
+                <input className="validate" type="text" onChange={this.handleNameChange} id="input_name" placeholder="Name..." value={this.state.inputName} required/>
               </div>
               <div className="input-field col s5">
-                <input type="text" onChange={this.handleReplyChange} id="input_comment" placeholder="Reply..." required/>
+                <input type="text" onChange={this.handleReplyChange} id="input_comment" placeholder="Reply..." value={this.state.inputReply} required/>
               </div>
               <div className="col s3">
                 <button className="btn waves-effect waves-light reply-button" type="submit">
