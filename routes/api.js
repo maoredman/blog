@@ -14,7 +14,7 @@ router.get('/comments', function (req, res) {
   res.send(comments);
 });
 router.post('/comments', function (req, res) {
-  comments.push({ name: req.body.name, comment: req.body.comment, id: comments.length, time: Date(), replies: [] });
+  comments.push({ name: req.body.name, title: req.body.title, comment: req.body.comment, id: comments.length, time: Date(), replies: [] });
 });
 
 router.get('/comments/:commentid', function (req, res) {

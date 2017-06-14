@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Modal } from 'react-materialize';
 
 class Comment extends Component {
   constructor(props) { // takes props.addtoDone/Undone
@@ -87,7 +88,11 @@ class Comment extends Component {
         <i className="material-icons my-big-icon">account_circle</i>
         <span className="title bold">{this.props.name}</span>
         <span className="timestamp bold">{this.props.time}</span>
-        <div className="flow-text comment-body">{this.props.comment}</div>
+        <div className="flow-text comment-body">
+          <Modal header={this.props.title} trigger={ <a className="my-modal-trigger">{this.props.title}</a> } >
+            <p className="display-linebreak">{ this.props.comment }</p>
+          </Modal>
+        </div>
         <span onClick={this.handleClick} className="secondary-content comment-button"><i className="material-icons">comment</i>{this.state.ids.length}</span>
 
         <ul className={(this.state.showReplies ? '' : 'hide') + ' collection'}>
