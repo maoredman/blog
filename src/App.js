@@ -74,8 +74,7 @@ class App extends Component {
         name: this.state.inputName,
         title: this.state.inputTitle,
       })
-    })
-<<<<<<< HEAD
+    });
     let newids = this.state.ids;
     newids.push(this.state.ids.length);
     let newnames = this.state.names;
@@ -96,8 +95,6 @@ class App extends Component {
       inputTitle: '',
       inputName: ''
     });
-=======
->>>>>>> parent of 796f7bf... quicker speed by removing auto refresh
   }
 
   handleClick(accessKey) {
@@ -116,17 +113,10 @@ class App extends Component {
         <form className="col s12" onSubmit={this.handleSubmit}>
           <div className="row">
             <div className="input-field col s3">
-<<<<<<< HEAD
               <input className="validate" type="text" onChange={this.handleNameChange} id="input_name" placeholder="Name..." value={this.state.inputName} required="required"/>
             </div>
             <div className="input-field col s3">
               <input className="validate" type="text" onChange={this.handleTitleChange} id="input_title" placeholder="Title..." value={this.state.inputTitle} required="required"/>
-=======
-              <input className="validate" type="text" onChange={this.handleNameChange} id="input_name" placeholder="Name..." required/>
-            </div>
-            <div className="input-field col s6">
-              <input type="text" onChange={this.handleCommentChange} id="input_comment" placeholder="Comment..." required/>
->>>>>>> parent of 796f7bf... quicker speed by removing auto refresh
             </div>
             <div className="col s3">
               <button className="btn waves-effect waves-light" type="submit">
