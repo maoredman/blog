@@ -18,11 +18,9 @@
     "react-start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "postinstall": "npm build"
+    "eject": "react-scripts eject"
   },
   "engines": {
-    "node": "7.6.0",
-    "npm": "4.1.2"
+    "node": "7.6.0"
   }
 }
