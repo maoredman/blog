@@ -1,7 +1,5 @@
-# Message board
-Saves comments and replies in the Node server.
+# Blog
+Saves blog posts and comments in a MongoDB database.
 To run, enter `npm build`, then `npm start` in command line
 
-[Demo](https://maoredman-comment-app.now.sh/)
-
-Deployed using Now, which lets its servers sleep after 30 minutes of inactivity, effectively deleting all stored comments and replies.
+[Demo](https://example.com/)
