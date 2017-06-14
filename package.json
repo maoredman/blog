@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "assert": "^1.4.1",
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
+    "mongodb": "^2.2.28",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-materialize": "^1.0.1",

@@ -27,7 +27,7 @@ class App extends Component {
 
   componentDidMount() {
     fetch('/api/comments') // or whatever URL you want
-      .then((response) => { const result = response.json(); console.log('response.json: ' + result); return result; })
+      .then((response) => { const result = response.json(); return result; })
       .catch((error) => console.log('1st error: ' + error))
       .then((comments) => {
         let newids = [];
@@ -61,10 +61,6 @@ class App extends Component {
 
   handleSubmit(event) {
     event.preventDefault(); // prevents reloading
-    console.log(JSON.stringify({
-        comment: this.state.inputComment,
-        name: this.state.inputName,
-      }));
     fetch('/api/comments', {
       method: 'post',
       headers: {
@@ -99,7 +95,6 @@ class App extends Component {
   }
 
   handleClick(accessKey) {
-    console.log("should add comment to " + accessKey);
   }
 
   

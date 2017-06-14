@@ -54,10 +54,6 @@ class Comment extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(JSON.stringify({
-        reply: this.state.inputReply,
-        name: this.state.inputName,
-      }));
     fetch('/api/comments/'  + this.props.accessKey , {
       method: 'post',
       headers: {
