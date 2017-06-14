@@ -59,8 +59,7 @@ class App extends Component {
     this.setState({ inputComment: event.target.value });
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
+  handleSubmit() {
     console.log(JSON.stringify({
         comment: this.state.inputComment,
         name: this.state.inputName,
