@@ -6,7 +6,9 @@
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-materialize": "^1.0.1",
+    "react-modal": "^1.9.4"
   },
   "devDependencies": {
     "react-scripts": "0.9.5"

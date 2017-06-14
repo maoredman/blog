@@ -1,3 +1,12 @@
+.my-modal-trigger {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.display-linebreak {
+  white-space: pre-line;
+}
+
 body {
   margin: 0;
   padding: 0;
