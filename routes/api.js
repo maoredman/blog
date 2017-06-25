@@ -3,7 +3,7 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 var MongoClient = require('mongodb').MongoClient
   , assert = require('assert');
-var url = 'mongodb://maoredman:Cakeyman@ds119810.mlab.com:19810/database-for-blog';
+var url = 'mongodb://USER:PSWD@ds119810.mlab.com:19810/database-for-blog';
 
 router.use(bodyParser.json());
 
